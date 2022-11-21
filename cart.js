@@ -13,12 +13,12 @@ let calculation =()=>{
   let generateCartItems = () => {
 if(basket.length !==0){
 return (shoppingCart.innerHTML = basket.map((x)=>{
-    console.log(x);
+
     let {id,item} = x;
     let search = shopItemsData.find((y)=>y.id === id) || [];
     return `
     <div class="cart-item">
-<img width="100" height="140"src="${search.imgSrc}" alt=""/><button class="red">&times;</button>
+<img width="100" height="140"src="${search.imgSrc}" alt=""/><button onclick="removeItem(${id})" class="red">&times;</button>
 <div class="details">
 
 <div class="title-price-x">
@@ -83,4 +83,31 @@ else{
      let search = basket.find((x)=>x.id===id);
      // console.log(search.item)
      document.getElementById(id).innerHTML = search.item;
-    calculation()};
+    calculation();
+    totalAmount();};
+
+    let removeItem = (id)=>{
+    let selectedItem = id;
+    // console.log(selectedItem.id)
+    basket = basket.filter((x)=>x.id !== selectedItem.id);
+    generateCartItems();
+    localStorage.setItem("data", JSON.stringify(basket));
+}
+
+let totalAmount = () => {
+    if (basket.length !== 0){
+        let amount = basket.map((x)=>
+        {
+            let{item, id} = x;
+            let search = shopItemsData.find((y)=>y.id === id) || [];
+            return item * search.price;
+        }).reduce((x,y)=>x+y,0);
+        label.innerHTML =`
+        <p class="bill">Total Bill : $ ${amount}</p>
+        <div class="finish">
+        <button class="checkout">Checkout</button>
+        <button class="removeAll">Clear cart</button><div>`
+    }
+    else return
+}
+totalAmount();

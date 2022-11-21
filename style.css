@@ -250,7 +250,7 @@ height: 210px;
 }
 
 .shopping-cart{
-
+margin-top: 40px;
     display: grid;
     justify-content: center;
     grid-template-columns: 1, 390px;
@@ -303,9 +303,79 @@ font-weight: 500;
 .total{
     position: relative;
     bottom: -100px;
-    
     font-size: 36px;
     font-weight: 500;
     display: flex;
     flex-direction: row;
+}
+.bill{
+    color: yellow;
+    font-family: "Roboto", sans-serif;
+    font-size: 36px;
+    font-weight: 600;
+    padding-bottom: 10px;
+    position: absolute;
+    bottom: 360px;
+}
+.checkout{
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: yellow;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+                cursor: pointer;
+}
+.checkout:hover {
+    background-color: rgb(181, 194, 0);
+}
+
+.checkout:active {
+    background-color: white;}
+.removeAll{
+    position: relative;
+    font-family: "Roboto", sans-serif;
+    border: 0;
+    line-height: 2.5;
+    padding: 0 20px;
+    font-size: 1.5rem;
+    text-align: center;
+    color: white;
+    text-shadow: 1px 1px 1px #000;
+    border-radius: 10px;
+    background-color: red;
+    background-image: linear-gradient(to top left,
+                                      rgba(0, 0, 0, .2),
+                                      rgba(0, 0, 0, .2) 30%,
+                                      rgba(0, 0, 0, 0));
+    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
+                inset -2px -2px 3px rgba(0, 0, 0, .6);
+                cursor: pointer;
+}
+.removeAll:hover {
+    background-color: rgb(131, 27, 13);
+}
+
+.removeAll:active {
+    background-color: white;}
+.finish{
+    display: flex;
+    gap: 30px;
+    margin-bottom: 20px;
+    position: absolute;
+    bottom: 270px;
+    justify-content: space-between;
+    align-items: center;
+    padding-left: 45px;
 }
