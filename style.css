@@ -9,7 +9,7 @@
 
 }
 .wrapper{
-    min-height: 100%;
+height: 6700px;
     margin: 0 auto;
     width: 100%;
     overflow: hidden;
@@ -44,48 +44,21 @@ main{
 background-color: #02505c;
 }
 
-.book{
-    padding: 35px 18px 0 48px;
+.book1{
+    padding: 55px 18px 50px 48px;
     border: 2px solid;
     border-color: antiquewhite;
     align-items: center;
-    max-height: 570px;
-}
-.my_button{position: relative;
-    font-family: "Roboto", sans-serif;
-    left: 600px;
-    bottom: 507px;
-    border: 0;
-    line-height: 2.5;
-    padding: 0 20px;
-    font-size: 1.5rem;
-    text-align: center;
-    color: rgb(19, 13, 13);
-    text-shadow: 1px 1px 1px #000;
-    border-radius: 10px;
-    background-color: yellow;
-    background-image: linear-gradient(to top left,
-                                      rgba(0, 0, 0, .2),
-                                      rgba(0, 0, 0, .2) 30%,
-                                      rgba(0, 0, 0, 0));
-    box-shadow: inset 2px 2px 3px rgba(255, 255, 255, .6),
-                inset -2px -2px 3px rgba(0, 0, 0, .6);
-                cursor: pointer;
-}
-.my_button:hover {
-    background-color: rgb(181, 194, 0);
+    max-height: 620px;
 }
 
-.my_button:active {
-    background-color: white;
-}
 span{
     padding-left: 7px;
 }
 .my_button1{position: relative;
     font-family: "Roboto", sans-serif;
-    left: 810px;
-    bottom: 568px;
+    left: 790px;
+    bottom: 518px;
     border: 0;
     line-height: 2.5;
     padding: 0 20px;
@@ -117,7 +90,7 @@ span{
     opacity: 80%;
     position: relative;
     left: 600px;
-    bottom: 500px;
+    bottom: 430px;
 }
 h3{
     color: white;
@@ -125,7 +98,7 @@ h3{
     font-size: 28px;
     position: relative;
     left: 600px;
-    bottom: 500px;
+    bottom: 450px;
 }
 .price{
     padding-left: 5px;
@@ -135,7 +108,7 @@ h3{
     opacity: 80%;
     position: relative;
     left: 600px;
-    bottom: 500px;
+    bottom: 390px;
 }
 .modal{
     position: fixed;
@@ -147,7 +120,7 @@ h3{
     border-radius: 15px;
     z-index: 10;
     background-color: #adb9ad;
-    width: 300px;
+    width: 400px;
     max-width: 30%;
     font-family: "Roboto", sans-serif;
 }
@@ -164,7 +137,7 @@ h3{
 }
 .close-button{
     position: absolute;
-    left: 270px;
+    left: 370px;
     top: 5px;
     cursor: pointer;
     outline: none;
@@ -172,19 +145,47 @@ h3{
     font-size: 1.5rem;
     font-size: bold;
 }
-
+.cart{
+    display: flex;
+    flex-direction: row;
+    padding-bottom: 30px;
+padding-right: 70px;
+font-size: 30px;
+translate: 90% 30%;
+margin-bottom: 40px;
+color: white;
+line-height: 30px;
+}
 .cart a{
     text-decoration: none;
-    line-height: 40px;
     color: white;
-    position: relative;
-    left: 1000px;
+}
+.cartAmount{
+    position: absolute;
+    top: -20px;
+    left: 25px;
+    background-color: red;
+    padding: 0 3px;
+    border-radius: 17%;
+    text-align: center;
+    font-size: 24px;
+    line-height: 25px;
 
 }
+.buttons{
+    display: flex;
+    gap: 7px;
+    color: white;
+    font-weight: 300;
+    font-size: 28px;
+    position: relative;
+   left: 600px;
+   bottom: 470px;
+}
+.bi-plus-lg{
+    color: green;
+}
 
-.cart i{
-font-size: 30px;
-line-height: 70px;
-padding-bottom: 30px;
-padding-right: 10px;
+.bi-dash-lg{
+    color: red;
 }
