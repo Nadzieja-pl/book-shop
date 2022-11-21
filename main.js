@@ -36,7 +36,7 @@ ${search.item===undefined?0: search.item}
         <p class="price">
            $ ${price}
         </p>
-    </div></div>`;}));
+    </div></div>`;}).join(""));
  }
  generateShop()
 
