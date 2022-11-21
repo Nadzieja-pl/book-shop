@@ -91,7 +91,14 @@ else{
     // console.log(selectedItem.id)
     basket = basket.filter((x)=>x.id !== selectedItem.id);
     generateCartItems();
+    totalAmount();
     localStorage.setItem("data", JSON.stringify(basket));
+}
+
+let clearCart = () =>{
+basket = []
+generateCartItems();
+localStorage.setItem("data", JSON.stringify(basket));
 }
 
 let totalAmount = () => {
@@ -106,7 +113,7 @@ let totalAmount = () => {
         <p class="bill">Total Bill : $ ${amount}</p>
         <div class="finish">
         <button class="checkout">Checkout</button>
-        <button class="removeAll">Clear cart</button><div>`
+        <button onclick="clearCart()"class="removeAll">Clear cart</button><div>`
     }
     else return
 }
