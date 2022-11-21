@@ -1,5 +1,5 @@
-let label = document.getElementById('label')
-let shoppingCart = document.getElementById('shopping-cart');
+let label = document.getElementById("label");
+let shoppingCart = document.getElementById("shopping-cart");
 
 let basket = JSON.parse(localStorage.getItem("data"))||[];
 let calculation =()=>{
@@ -12,7 +12,23 @@ let calculation =()=>{
 
   let generateCartItems = () => {
 if(basket.length !==0){
-    
+return (shoppingCart.innerHTML = basket.map((x)=>{
+    console.log(x);
+    let {id,item} = x;
+    let search = shopItemsData.find((y)=>y.id === id) || [];
+    return `
+    <div class="cart-item">
+<img width="100" height="140"src="${search.imgSrc}" alt=""/><button class="red">&times;</button>
+<div class="details">
+
+<div class="title-price-x">
+<h4>${search.author}</h4>
+<p>${search.title}</p><p>$ ${search.price}</p></div></div>
+<div class="cart-buttons"></div>
+
+<h3></h3>
+    </div>`;
+}).join(""));
 }
 else{
     shoppingCart.innerHTML = ``
