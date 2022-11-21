@@ -14,6 +14,13 @@ height: 6700px;
     width: 100%;
     overflow: hidden;
 }
+.wrapper1{
+    min-height: 2100px;
+        margin: 0 auto;
+        width: 100%;
+        overflow: hidden;
+        height: 100%;
+    }
 .container{
     max-width: 1200px;
     margin: 0px auto;
@@ -229,3 +236,38 @@ line-height: 30px;
 .bi-dash-lg{
     color: red;
 }
+
+
+.cart-item{
+    display: flex;
+    flex-direction: row;
+    border: 2px solid white;
+    padding: 30px;
+    width: 400px;
+
+}
+
+.shopping-cart{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    grid-template-columns: 1, 390px;
+    gap: 20px;
+}
+.title-price-x p{
+    padding: 10px;
+    line-height: 20px;
+    color: white;
+}
+.title-price-x h4{
+    padding-left: 20px;
+    text-align: center;
+    color: white;
+}
+.red{
+    color: red;
+    font-weight: bold;
+    position: absolute;
+    font-size: 36px;
+    position: absolute;
+    }
