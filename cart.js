@@ -92,6 +92,7 @@ else{
     basket = basket.filter((x)=>x.id !== selectedItem.id);
     generateCartItems();
     totalAmount();
+    calculation();
     localStorage.setItem("data", JSON.stringify(basket));
 }
 
@@ -112,7 +113,7 @@ let totalAmount = () => {
         label.innerHTML =`
         <p class="bill">Total Bill : $ ${amount}</p>
         <div class="finish">
-        <button class="checkout">Checkout</button>
+        <a href="order.html"><button class="checkout">Checkout</button></a>
         <button onclick="clearCart()"class="removeAll">Clear cart</button><div>`
     }
     else return
