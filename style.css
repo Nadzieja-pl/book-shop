@@ -43,7 +43,9 @@ main{
     font-family: "Roboto", sans-serif;
 background-color: #02505c;
 }
-
+i{
+    cursor: pointer;
+}
 .book1{
     padding: 55px 18px 50px 48px;
     border: 2px solid;

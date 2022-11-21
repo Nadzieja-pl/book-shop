@@ -95,7 +95,7 @@ ${search.item===undefined?0: search.item}
         </div><i onclick="increment(${id})" class="bi bi-plus-lg"></i>
 </div>
 <div>
-    <button data-modal-target="#modal" class="my_button1">
+    <button data-modal-target="#modal" class="my_button1" >
         <i class="fa-solid fa-circle-info"></i>
         <span>
             Show more
@@ -143,15 +143,18 @@ item: 1,});
 
  let decrement = (id)=>{
   let selectedItem = id;
-
-  let search = basket.find((x)=>x.id===selectedItem.id)
-  if(search.item === 0) return;
+  let search = basket.find((x)=>x.id===selectedItem.id);
+  if(search === undefined) return;
+ else if(search.item === 0) return;
   else{
    search.item -= 1;
   //  console.log(basket);
   }
-  localStorage.setItem("data", JSON.stringify(basket));
-   update(selectedItem.id);}
+update(selectedItem.id);
+  basket = basket.filter((x)=>x.item !== 0);
+   
+
+   localStorage.setItem("data", JSON.stringify(basket));}
   ;
 
  let update = (id)=>{
@@ -171,18 +174,18 @@ calculation();
 
 
 
-const openModalButtons = document.querySelectorAll('[data-modal-target]')
-const closeModalButtons = document.querySelectorAll('[data-close-button]')
+let openModalButtons = document.querySelectorAll('[data-modal-target]')
+let closeModalButtons = document.querySelectorAll('[data-close-button]')
 openModalButtons.forEach(button => {
     button.addEventListener('click', ()=>{
-        const modal = document.querySelector(button.dataset.modalTarget)
+        let modal = document.querySelector(button.dataset.modalTarget)
         openModal(modal)
     })
 })
 
 closeModalButtons.forEach(button => {
     button.addEventListener('click', ()=>{
-        const modal = button.closest('.modal')
+        let modal = button.closest('.modal')
         closeModal(modal)
     })
 })
