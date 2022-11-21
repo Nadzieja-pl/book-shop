@@ -2,7 +2,7 @@
 let shop = document.getElementById('book');
 
 let shopItemsData = [{
-    id: "1b",
+    id: "a",
     author: "Douglas Crockford",
     title: "JavaScript: The Good Parts: The Good Parts",
     price: 30,
@@ -10,7 +10,7 @@ let shopItemsData = [{
     imgSrc: "1.jpg",
   },
     {
-        id: "2b",
+        id: "b",
       author: "David Herman",
       title: "Effective JavaScript: 68 Specific Ways <br>to Harness the Power of JavaScript",
       price: 22,
@@ -18,7 +18,7 @@ let shopItemsData = [{
       imgSrc: "2.jpg",
     },
     {
-        id: "3b",
+        id: "c",
       author: "David Flanagan",
       "title": "JavaScript: The Definitive Guide",
       "price": 40,
@@ -26,7 +26,7 @@ let shopItemsData = [{
       imgSrc: "3.jpg",
     },
     {
-        id: "4b",
+        id: "d",
       author: " Eric Elliott",
       title: "Programming JavaScript Applications",
       price: 19,
@@ -34,7 +34,7 @@ let shopItemsData = [{
     imgSrc: "4.jpg",
     },
     {
-        id: "5b",
+        id: "e",
       author: "Addy Osmani",
       title: "Learning JavaScript Design Patterns",
       price: 32,
@@ -42,7 +42,7 @@ let shopItemsData = [{
       imgSrc: "5.jpg",
     },
     {
-        id: "6b",
+        id: "f",
       author: "Boris Cherny",
       title: "Programming TypeScript",
       price: 28,
@@ -50,7 +50,7 @@ let shopItemsData = [{
       imgSrc: "6.jpg",
     },
     {
-        id: "7b",
+        id: "g",
       author: "Alex Banks, Eve Porcello",
       title: "Learning React, 2nd Edition",
       price: 25,
@@ -58,7 +58,7 @@ let shopItemsData = [{
       imgSrc: "7.jpg",
     },
     {
-        id: "8b",
+        id: "h",
       author: "Bradley Meck Alex Young<br> and Mike Cantelon",
       title: "Node.js in Action",
       price: 38,
@@ -66,7 +66,7 @@ let shopItemsData = [{
       imgSrc: "8.jpg",
     },
     {
-        id: "9b",
+        id: "i",
       author: "Kyle Simpson",
       title: "You Don't Know JS Yet: Get Started",
       price: 26,
@@ -74,7 +74,7 @@ let shopItemsData = [{
       imgSrc: "9.jpg",
     },
     {
-        id: "10b",
+        id: "j",
       author: "John Resig and Bear Bibeault",
       title: "Secrets of the JavaScript Ninja",
       price: 33,
@@ -82,15 +82,16 @@ let shopItemsData = [{
       imgSrc: "10.jpg",
     },];
 
+let basket = []
  let generateShop = () => {
     return (shop.innerHTML = shopItemsData.map((x)=>{
         let {id, imgSrc,description,author,title,price,} = x
         return `<div class="book1" id=product-id-${id}><img src=${imgSrc} alt="image of the book">
     <div class="buttons">
-        <i class="bi bi-dash-lg"></i>
-        <div class="quantity">
+        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+        <div id=${id} class="quantity">
 0
-        </div><i class="bi bi-plus-lg"></i>
+        </div><i onclick="increment(${id})" class="bi bi-plus-lg"></i>
 </div>
 <div>
     <button data-modal-target="#modal" class="my_button1">
@@ -101,7 +102,7 @@ let shopItemsData = [{
     </button>
     <div class="modal" id="modal">
         <div class="more-text"><button data-close-button class="close-button">&times;</button>
-        ${description}
+        <p>${description}</p>
         </div>
     </div>
 </div>
@@ -117,6 +118,44 @@ let shopItemsData = [{
     </div></div>`;}));
  }
  generateShop()
+
+
+ let increment = (id) => {
+
+ let selectedItem = id;
+
+ let search = basket.find((x)=>x.id===selectedItem.id)
+
+ if(search === undefined){
+  basket.push({
+  id: selectedItem.id,
+item: 1,});
+
+ }
+ else{
+  search.item += 1;
+  // console.log(basket);
+ }
+ update(selectedItem.id);
+};
+
+ let decrement = (id)=>{
+  let selectedItem = id;
+
+  let search = basket.find((x)=>x.id===selectedItem.id)
+  if(search.item === 0) return;
+  else{
+   search.item -= 1;
+  //  console.log(basket);
+  }
+   update(selectedItem.id);}
+  ;
+
+ let update = (id)=>{
+  let search = basket.find((x)=>x.id===id);
+  document.getElementById(id).innerHTML = search.item;
+ console.log(search.item)};
+
 
 
 const openModalButtons = document.querySelectorAll('[data-modal-target]')
