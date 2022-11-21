@@ -1,4 +1,3 @@
-"use strict";
 let shop = document.getElementById('book');
 
 
