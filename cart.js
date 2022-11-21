@@ -23,8 +23,13 @@ return (shoppingCart.innerHTML = basket.map((x)=>{
 
 <div class="title-price-x">
 <h4>${search.author}</h4>
-<p>${search.title}</p><p>$ ${search.price}</p></div></div>
-<div class="cart-buttons"></div>
+<p>${search.title}</p><p id="price">$ ${search.price}</p></div></div>
+<div class="buttons1">
+        <i onclick="decrement(${id})" class="bi bi-dash-lg"></i>
+        <div id=${id} class="quantity">
+${search.item===undefined?0: search.item}
+        </div><i onclick="increment(${id})" class="bi bi-plus-lg"></i>
+</div>
 
 <h3></h3>
     </div>`;

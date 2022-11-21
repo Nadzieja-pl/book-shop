@@ -9,7 +9,7 @@ let shopItemsData = [{
   {
       id: "b",
     author: "David Herman",
-    title: "Effective JavaScript: 68 Specific Ways <br>to Harness the Power of JavaScript",
+    title: "Effective JavaScript: 68 Specific Ways to Harness<br> the Power of JavaScript",
     price: 22,
     description: "Effective JavaScript is organized around 68 proven approaches for writing better JavaScript, backed by concrete examples. You’ll learn how to choose the right programming style for each project, manage unanticipated problems, and work more successfully with every facet of JavaScript programming from data structures to concurrency.",
     imgSrc: "2.jpg",
